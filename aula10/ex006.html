@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area { 
+            font: normal 2em arial, sans-serif;
+            background-color: greenyellow;
+            color: rgb(255, 255, 255);
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Iteraja...
+    </div>
+    <script>
+        var c = window.document.querySelector('div#area')        
+
+        c.addEventListener('click', clicar)
+        c.addEventListener('mouseenter', entrar)
+        c.addEventListener('mouseout', sair)
+
+        function clicar() { 
+            c.innerText = 'Clicou!'
+            c.style.borderRadius = '50%'
+            c.style.backgroundColor = 'red'
+            //Criar um tempo para o elemento voltar ao normal
+            setTimeout(function() {
+                c.style.borderRadius = '0%'
+                c.style.backgroundColor = 'greenyellow'
+                c.innerText = 'Iteraja...'
+            }, 1500)
+        }
+        function entrar() { 
+            c.innerText = 'Entrou!'
+        }
+        function sair() { 
+            c.innerText = 'Saiu!'
+        }
+    </script>
+</body>
+</html>
