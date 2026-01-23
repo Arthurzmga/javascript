@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-color: rgb(54, 171, 154);
+        }
+        header > h1 { 
+            text-align: center;
+            padding: 20px;
+            color: white;
+            text-shadow: 5px 5px 7px rgba(0, 0, 0, 0.48);
+        }
+        main {
+            width: 400px;
+            height: 300px;
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.439);
+        }
+        main #hora{
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+        }
+        main #hora h1 { 
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.48);
+        }
+        img#imagem {
+            width: 45%;
+            transform: translate(55%, -110%);
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.439);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hora do dia</h1>
+    </header>
+    <main>
+        <div id="hora"></div>
+        <img src="" alt="" id="imagem">
+    </main>
+    <footer></footer>
+
+    </footer>
+    <script>
+        var agora = new Date().getHours()
+        if (agora < 12) {
+            document.querySelector("#hora").innerHTML = "<p>Agora são " + agora + " horas. Então...</p> <br> <h1>Bom dia!</h1>"
+            document.querySelector("#imagem").src = "imagens/manha.jpg"
+            document.querySelector("body").style.backgroundColor = "rgb(255, 223, 112)"
+            
+        } else if (agora < 18) { 
+            document.querySelector("#hora").innerHTML = "<p>Agora são " + agora + " horas. Então...</p> <br> <h1>Boa tarde!</h1>"
+            document.querySelector("#imagem").src = "imagens/tarde.avif"
+            document.querySelector("body").style.backgroundColor = "rgb(250, 150, 100)"
+        } else {
+            document.querySelector("#hora").innerHTML = "<p>Agora são " + agora + " horas. Então...</p> <br> <h1>Boa noite!</h1>"
+            document.querySelector("#imagem").src = "imagens/noite.jpg"
+            document.querySelector("body").style.backgroundColor = "rgb(54, 54, 105)"
+        }
+    </script>
+</body>
+</html>
